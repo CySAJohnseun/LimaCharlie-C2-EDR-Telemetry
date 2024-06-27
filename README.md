@@ -200,47 +200,56 @@ Through these steps, you have successfully demonstrated generating a C2 payload,
 This tutorial provides a step-by-step guide for cybersecurity analysts to observe and analyze Endpoint Detection and Response (EDR) telemetry using the LimaCharlie platform.
 
 1. **Accessing Sensors in LimaCharlie:**
-![[Pasted image 20240626144748.png]]
+![image](https://github.com/CySAJohnseun/LimaCharlie-C2-EDR-Telemetry/assets/166464506/17dc4400-6c9f-467e-aa48-c4366135515b)
+
    - Navigate to the "Sensors" section in the LimaCharlie web UI.
    - Select an active Windows sensor to begin the analysis.
 
 3. **Exploring Processes:**
-**![[Pasted image 20240626145330.png]]
+![image](https://github.com/CySAJohnseun/LimaCharlie-C2-EDR-Telemetry/assets/166464506/d9a643d1-ccc0-4134-b372-f825c0d824d2)
+
    - Click on the "Processes" tab for the selected sensor.
    - Examine the process tree, hover over icons to understand their representations.
    - Emphasizes the importance of familiarizing with common system processes to identify anomalies.
 
 5. **Identifying Unusual Processes:**
-![[Pasted image 20240626151559.png]]
+![image](https://github.com/CySAJohnseun/LimaCharlie-C2-EDR-Telemetry/assets/166464506/41ac7ed7-b6ee-4258-b41c-f12468564bb7)
+
    - Signed processes are generally benign, but legitimate processes can be exploited.
    - Look for unsigned processes as potential indicators of unusual or malicious activity.
    - Example: A Command and Control (C2) implant that is unsigned and active on the network.
-![[Pasted image 20240626155534.png]]
+![image](https://github.com/CySAJohnseun/LimaCharlie-C2-EDR-Telemetry/assets/166464506/de173447-103e-479c-8d44-79d89f60838a)
+
 
 7. **Network Analysis:**
 
-![[Pasted image 20240626155611.png]]
+![image](https://github.com/CySAJohnseun/LimaCharlie-C2-EDR-Telemetry/assets/166464506/874a8989-e7f6-49d7-9e0f-d932891f1e1d)
+
    - Click on the "Network" tab to review network connections.
    - Use Ctrl+F to search for specific implant names or C2 IP addresses.
 
 9. **File System Inspection:**
-![[Pasted image 20240626155910.png]]
+![image](https://github.com/CySAJohnseun/LimaCharlie-C2-EDR-Telemetry/assets/166464506/1bd75876-8da2-42bf-a79b-001fc9aec8b7)
+
    - Click on the "File System" tab and navigate to the known location of the implant (e.g., C:\Users\User\Downloads).
    - Inspect the hash of the suspicious executable using VirusTotal.
 
 11. **Understanding VirusTotal Results:**
-![[Pasted image 20240626155947.png]]
+![image](https://github.com/CySAJohnseun/LimaCharlie-C2-EDR-Telemetry/assets/166464506/865f223f-f894-4512-9b01-8bc2937678c3)
+
    - Clarifies that scanning with VirusTotal queries its database for known malware samples.
    - An unknown file on VirusTotal doesn’t imply innocence; it might be a custom-crafted or targeted sample.
 
 13. **Timeline Analysis:**
-![[Pasted image 20240626160322.png]]
+![image](https://github.com/CySAJohnseun/LimaCharlie-C2-EDR-Telemetry/assets/166464506/6f35d454-786f-4e63-9a60-5b9c3bf053bc)
+
    - Click on the "Timeline" tab for a near real-time view of EDR telemetry and event logs.
    - Practice filtering the timeline using known Indicators of Compromise (IOCs) such as implant names or C2 IP addresses.
    - Track the creation, launch, and network activity of the implant.
 
 15. **Investigating Related Events:**
-![[Pasted image 20240626160643.png]]
+![image](https://github.com/CySAJohnseun/LimaCharlie-C2-EDR-Telemetry/assets/166464506/77d2249c-c667-488a-841f-20fa12939d0d)
+
    - Examine events related to the implant process, such as "SENSITIVE_PROCESS_ACCESS."
    - These events will be useful for crafting detection rules later.
 
